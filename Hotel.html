@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beteket Hotel — Hosaina, Ethiopia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav id="navbar">
+  <a class="nav-brand" href="#">Bereket Hotel</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+  <button class="nav-book" onclick="scrollTo('booking')">Book Now</button>
+  <button class="hamburger" aria-label="Menu" onclick="document.getElementById('navbar').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Hosaina, Southern Ethiopia</div>
+    <h1 class="hero-title">Beteket<br><em>Hotel</em></h1>
+    <p class="hero-subtitle">Your home in the heart of Hosaina</p>
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="scrollTo('booking')">Reserve a Room</button>
+      <button class="btn-ghost" onclick="scrollTo('rooms')">View Rooms</button>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">4.2★</div><div class="stat-label">Guest Rating</div></div>
+    <div class="stat"><div class="stat-num">Central</div><div class="stat-label">Location</div></div>
+    <div class="stat"><div class="stat-num">24hr</div><div class="stat-label">Reception</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section class="section about reveal" id="about">
+  <div class="about-text">
+    <div class="section-eyebrow">Our Story</div>
+    <h2 class="section-title">A Place of <em>Warmth</em><br>& Welcome</h2>
+    <p>Beteket Hotel sits in the vibrant city of Hosaina, a crossroads of southern Ethiopian culture and commerce. We offer travelers a comfortable refuge — whether you are passing through, visiting family, or here on business.</p>
+    <p>Our staff speak Hadiya, Amharic, and enough English to make every guest feel at home. We pride ourselves on genuine Ethiopian hospitality: warm, unpretentious, and heartfelt.</p>
+    <p>Located at the heart of Hosaina, we are steps from the main road, markets, and public transport that connect you to the wider region.</p>
+    <a href="#booking" class="btn-ghost" style="margin-top:1rem;text-decoration:none">Reserve Now →</a>
+  </div>
+  <div class="about-img">
+    <!-- Ethiopian landscape / city feel -->
+    <img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=900&auto=format&fit=crop" alt="Hosaina Ethiopia landscape" loading="lazy">
+    <div class="about-img-caption">Hosaina, Southern Ethiopia</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ROOMS -->
+<section class="section reveal" id="rooms">
+  <div class="section-eyebrow">Accommodation</div>
+  <h2 class="section-title">Our <em>Rooms</em></h2>
+  <div class="rooms-grid">
+
+    <div class="room-card">
+      <div class="room-img">
+        <div class="room-num">01</div>
+        <div class="room-badge">Standard</div>
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&auto=format&fit=crop" alt="Standard Room" loading="lazy">
+      </div>
+      <div class="room-info">
+        <div class="room-name">Standard Room</div>
+        <div class="room-desc">Clean, comfortable, and perfect for solo travelers or a short stay. Everything you need.</div>
+        <div class="room-features">
+          <span class="rf"><i class="ti ti-wind"></i> A/C</span>
+          <span class="rf"><i class="ti ti-droplet"></i> En-suite</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-img">
+        <div class="room-num">02</div>
+        <div class="room-badge">Double</div>
+        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=700&auto=format&fit=crop" alt="Double Room" loading="lazy">
+      </div>
+      <div class="room-info">
+        <div class="room-name">Double Room</div>
+        <div class="room-desc">Spacious double for couples or business travelers seeking extra comfort and space.</div>
+        <div class="room-features">
+          <span class="rf"><i class="ti ti-wind"></i> A/C</span>
+          <span class="rf"><i class="ti ti-wifi"></i> Wi-Fi</span>
+          <span class="rf"><i class="ti ti-droplet"></i> En-suite</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-img">
+        <div class="room-num">03</div>
+        <div class="room-badge">Suite</div>
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=700&auto=format&fit=crop" alt="Executive Suite" loading="lazy">
+      </div>
+      <div class="room-info">
+        <div class="room-name">Executive Suite</div>
+        <div class="room-desc">Our finest accommodation with sitting area, premium furnishings, and all amenities included.</div>
+        <div class="room-features">
+          <span class="rf"><i class="ti ti-wind"></i> A/C</span>
+          <span class="rf"><i class="ti ti-wifi"></i> Wi-Fi</span>
+          <span class="rf"><i class="ti ti-tv"></i> TV</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section reveal" id="gallery">
+  <div class="section-eyebrow">Gallery</div>
+  <h2 class="section-title">Life at <em>Bereket</em></h2>
+  <div class="gallery-grid">
+    <div class="gallery-item tall">
+      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=900&auto=format&fit=crop" alt="Hotel exterior" loading="lazy">
+      <div class="gallery-label">Hotel</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&auto=format&fit=crop" alt="Hotel dining" loading="lazy">
+      <div class="gallery-label">Dining</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&auto=format&fit=crop" alt="Hotel amenities" loading="lazy">
+      <div class="gallery-label">Comfort</div>
+    </div>
+    <div class="gallery-item">
+      <!-- Ethiopian coffee ceremony -->
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&auto=format&fit=crop" alt="Ethiopian coffee" loading="lazy">
+      <div class="gallery-label">Ethiopian Coffee</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&auto=format&fit=crop" alt="Hotel pool / garden" loading="lazy">
+      <div class="gallery-label">Relaxation</div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amenities-section section reveal" id="amenities">
+  <div class="section-eyebrow">Facilities</div>
+  <h2 class="section-title">Hotel <em>Amenities</em></h2>
+  <div class="amenities-grid">
+    <div class="amenity"><div class="amenity-icon"><i class="ti ti-wifi"></i></div><div class="amenity-name">Free Wi-Fi</div><div class="amenity-desc">Stay connected throughout your stay</div></div>
+    <div class="amenity"><div class="amenity-icon"><i class="ti ti-car"></i></div><div class="amenity-name">Parking</div><div class="amenity-desc">On-site parking for guests</div></div>
+    <div class="amenity"><div class="amenity-icon"><i class="ti ti-coffee"></i></div><div class="amenity-name">Café & Dining</div><div class="amenity-desc">Ethiopian coffee, tea, and local meals</div></div>
+    <div class="amenity"><div class="amenity-icon"><i class="ti ti-shirt"></i></div><div class="amenity-name">Laundry</div><div class="amenity-desc">Laundry service available on request</div></div>
+    <div class="amenity"><div class="amenity-icon"><i class="ti ti-clock"></i></div><div class="amenity-name">24h Reception</div><div class="amenity-desc">Staff available around the clock</div></div>
+    <div class="amenity"><div class="amenity-icon"><i class="ti ti-wind"></i></div><div class="amenity-name">Air Conditioning</div><div class="amenity-desc">Climate control in all rooms</div></div>
+    <div class="amenity"><div class="amenity-icon"><i class="ti ti-droplet"></i></div><div class="amenity-name">Hot Water</div><div class="amenity-desc">En-suite bathrooms with hot water</div></div>
+    <div class="amenity"><div class="amenity-icon"><i class="ti ti-shield-check"></i></div><div class="amenity-name">Security</div><div class="amenity-desc">Safe and secure premises</div></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE / COFFEE -->
+<section class="experience-section reveal">
+  <div class="experience-img">
+    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=900&auto=format&fit=crop" alt="Ethiopian coffee ceremony" loading="lazy">
+    <div class="experience-img-overlay"></div>
+  </div>
+  <div class="experience-content">
+    <div class="section-eyebrow">The Experience</div>
+    <h2 class="section-title">Ethiopian<br><em>Coffee Ceremony</em></h2>
+    <p>No visit to Ethiopia is complete without the coffee ceremony — a ritual of roasting, brewing, and sharing that can last over an hour. At Bereket, we serve fresh Ethiopian coffee daily, brewed the traditional way.</p>
+    <p>Hosaina sits in the heart of the Hadiya zone, where coffee, culture, and community come together. Let us welcome you to this warmth.</p>
+    <a href="#booking" class="btn-primary" style="margin-top:1rem;text-decoration:none;display:inline-block">Experience It →</a>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="booking-section reveal">
+  <div class="booking-inner">
+    <div class="section-eyebrow">Reservations</div>
+    <h2 class="section-title">Book Your <em>Stay</em></h2>
+    <p style="font-size:0.85rem;color:var(--cream2);opacity:0.45;font-weight:300">Pick your dates, then contact us via WhatsApp or phone to confirm</p>
+    <div class="booking-strip">
+      <div class="booking-field">
+        <label>Check-in</label>
+        <input type="date" id="checkin">
+      </div>
+      <div class="booking-field">
+        <label>Check-out</label>
+        <input type="date" id="checkout">
+      </div>
+      <div class="booking-field">
+        <label>Guests</label>
+        <select id="guests">
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4+ Guests</option>
+        </select>
+      </div>
+      <button class="booking-btn" onclick="handleBooking()">Book via WhatsApp →</button>
+    </div>
+    <div class="contact-box">
+      <p>Or contact us directly</p>
+      <!-- ★ REPLACE with real phone + email ★ -->
+      <a href="tel:+251000000000">📞 +251 000 000 000</a>
+      <a href="mailto:info@berekethotel.com">✉ info@berekethotel.com</a>
+    </div>
+    <p style="font-size:0.68rem;color:var(--cream2);opacity:0.22;margin-top:1.5rem;letter-spacing:0.05em">GVX3+X2J, Hosaina, Ethiopia · 7.5499° N, 37.8525° E</p>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location-section reveal" id="location">
+  <div class="location-info">
+    <div class="section-eyebrow">Find Us</div>
+    <h2 class="section-title">Getting <em>Here</em></h2>
+    <div style="margin-top:2rem">
+      <div class="location-item">
+        <div class="location-item-icon"><i class="ti ti-map-pin"></i></div>
+        <div>
+          <div class="location-item-label">Address</div>
+          <div class="location-item-text">GVX3+X2J, Hosaina<br>Southern Ethiopia (SNNPR)</div>
+        </div>
+      </div>
+      <div class="location-item">
+        <div class="location-item-icon"><i class="ti ti-navigation"></i></div>
+        <div>
+          <div class="location-item-label">Coordinates</div>
+          <div class="location-item-text">7.5499° N, 37.8525° E</div>
+        </div>
+      </div>
+      <div class="location-item">
+        <div class="location-item-icon"><i class="ti ti-bus"></i></div>
+        <div>
+          <div class="location-item-label">Getting Here</div>
+          <div class="location-item-text">Accessible by minibus from Hosaina bus station. Approx. 3–4 hours from Hawassa by road.</div>
+        </div>
+      </div>
+    </div>
+    <div class="nearby-title">Nearby Hotels</div>
+    <ul class="nearby-list">
+      <li>Ediget Hotel — 0.1 km</li>
+      <li>Woze Star Hotel — 0.1 km</li>
+      <li>Lema International Hotel — 0.6 km</li>
+      <li>Victory Hotel Hossana — 0.6 km</li>
+      <li>Hotel Shambalala — 0.8 km</li>
+    </ul>
+  </div>
+  <div class="location-map-img">
+    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=900&auto=format&fit=crop" alt="Ethiopia landscape road" loading="lazy">
+    <div class="location-map-overlay">
+      <p style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-align:center;max-width:200px;opacity:0.9;line-height:1.6">Bereket Hotel<br>Hosaina, Ethiopia</p>
+      <a href="https://maps.google.com/?q=7.5499558,37.8525052" target="_blank" class="btn-ghost" style="font-size:0.72rem;text-decoration:none">Open in Google Maps →</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section reveal" id="reviews">
+  <div class="section-eyebrow">Guest Voices</div>
+  <h2 class="section-title">What Guests <em>Say</em></h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">"A comfortable and clean place to rest. The staff were welcoming and helpful throughout my stay in Hosaina."</div>
+      <div class="review-author">Business Traveler · Addis Ababa</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <div class="review-text">"Good location, easy to find and close to the main market. A solid choice for anyone visiting the city."</div>
+      <div class="review-author">Guest · Hawassa</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <div class="review-text">"Reasonable price and friendly service. I appreciated the quiet rooms and the traditional coffee they served each morning."</div>
+      <div class="review-author">Visitor · Jimma</div>
+    </div>
+  </div>
+  <div class="rating-display">
+    <div class="rating-big">4.2</div>
+    <div class="rating-lbl">Overall guest rating · Google Reviews</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Bereket Hotel</div>
+      <div class="footer-tagline">A warm welcome in the heart of Hosaina, Southern Ethiopia. Genuine hospitality, every stay.</div>
+    </div>
+    <div>
+      <div class="footer-heading">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#booking">Reservations</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contact</div>
+      <ul class="footer-links">
+        <!-- ★ REPLACE with real details ★ -->
+        <li><a href="tel:+251000000000">+251 000 000 000</a></li>
+        <li><a href="mailto:info@betekethotel.com">info@betekethotel.com</a></li>
+        <li><a href="https://maps.google.com/?q=7.5499558,37.8525052" target="_blank">Google Maps</a></li>
+        <li><a href="#booking">Book a Room</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Bereket Hotel, Hosaina, Ethiopia</p>
+    <p><span class="gold-bar"></span> Ethiopian Hospitality <span class="gold-bar"></span></p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
