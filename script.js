@@ -1,37 +1,81 @@
-function scrollTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+// Smooth-scroll to any section by ID
+function scrollTo(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
 
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+// Handle all anchor links: smooth-scroll and close the mobile menu
+document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    var target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
     document.getElementById('navbar').classList.remove('open');
   });
 });
 
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Reveal elements as they scroll into view
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08 });
 
-function handleBooking(){
-  const ci=document.getElementById('checkin').value;
-  const co=document.getElementById('checkout').value;
-  const g=document.getElementById('guests').value;
-  if(!ci||!co){alert('Please select check-in and check-out dates.');return;}
-  const msg=`Hello, I would like to book a room at Beteket Hotel.\nCheck-in: ${ci}\nCheck-out: ${co}\nGuests: ${g}\nPlease confirm availability and rates. Thank you!`;
-  // ★ REPLACE 251000000000 with real WhatsApp number ★
-  window.open(`https://wa.me/251000000000?text=${encodeURIComponent(msg)}`,'_blank');
+document.querySelectorAll('.reveal').forEach(function(el) {
+  observer.observe(el);
+});
+
+// Build a WhatsApp message from the booking form and open it
+function handleBooking() {
+  var checkin  = document.getElementById('checkin').value;
+  var checkout = document.getElementById('checkout').value;
+  var guests   = document.getElementById('guests').value;
+
+  if (!checkin || !checkout) {
+    alert('Please select check-in and check-out dates.');
+    return;
+  }
+
+  var message =
+    'Hello, I would like to book a room at Beteket Hotel.\n' +
+    'Check-in: '  + checkin  + '\n' +
+    'Check-out: ' + checkout + '\n' +
+    'Guests: '    + guests   + '\n' +
+    'Please confirm availability and rates. Thank you!';
+
+  // ★ Replace 251000000000 with the real WhatsApp number ★
+  window.open('https://wa.me/251000000000?text=' + encodeURIComponent(message), '_blank');
 }
 
-const fmt=d=>d.toISOString().split('T')[0];
-const today=new Date();
-const tom=new Date(today);tom.setDate(tom.getDate()+1);
-document.getElementById('checkin').value=fmt(today);
-document.getElementById('checkout').value=fmt(tom);
-document.getElementById('checkin').min=fmt(today);
-document.getElementById('checkout').min=fmt(tom);
-document.getElementById('checkin').addEventListener('change',function(){
-  const nx=new Date(this.value);nx.setDate(nx.getDate()+1);
-  document.getElementById('checkout').min=fmt(nx);
-  if(document.getElementById('checkout').value<=this.value)document.getElementById('checkout').value=fmt(nx);
+// Helper: format a Date as YYYY-MM-DD
+function formatDate(date) {
+  return date.toISOString().split('T')[0];
+}
+
+// Pre-fill check-in with today and check-out with tomorrow
+var today    = new Date();
+var tomorrow = new Date(today);
+tomorrow.setDate(tomorrow.getDate() + 1);
+
+var checkinInput  = document.getElementById('checkin');
+var checkoutInput = document.getElementById('checkout');
+
+checkinInput.value  = formatDate(today);
+checkoutInput.value = formatDate(tomorrow);
+checkinInput.min    = formatDate(today);
+checkoutInput.min   = formatDate(tomorrow);
+
+// When check-in changes, push check-out forward if needed
+checkinInput.addEventListener('change', function() {
+  var nextDay = new Date(this.value);
+  nextDay.setDate(nextDay.getDate() + 1);
+
+  checkoutInput.min = formatDate(nextDay);
+
+  if (checkoutInput.value <= this.value) {
+    checkoutInput.value = formatDate(nextDay);
+  }
 });
